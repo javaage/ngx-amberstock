@@ -32,6 +32,16 @@ export class StockDeltaComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  searchCodes($event,myDrop,code){
+    $event.stopPropagation(); 
+    myDrop.open();
+    console.log(code);
+  }
+
+  selectCode(item){
+    console.log(item);
+  }
+
   showDelta(code){
     this.stockService.getStockDelta(code).subscribe(result=>{
       this.options = {

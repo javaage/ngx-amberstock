@@ -5,6 +5,7 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { AnalyticsService } from './@core/utils/analytics.service';
+import { setTheme } from 'ngx-bootstrap/utils';
 
 @Component({
   selector: 'ngx-app',
@@ -13,6 +14,7 @@ import { AnalyticsService } from './@core/utils/analytics.service';
 export class AppComponent implements OnInit {
 
   constructor(private analytics: AnalyticsService) {
+    setTheme('bs3');
   }
 
   ngOnInit(): void {

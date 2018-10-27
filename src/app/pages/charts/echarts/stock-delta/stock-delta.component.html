@@ -1,3 +1,30 @@
+
+
+<div class="form-group row">
+  <label for="inputSearch" class="col-lg-3 col-form-label">查询
+  </label>
+  <div class="col-lg-9">
+      <div class="row full-name-inputs">
+          <div class="col-sm-7 input-group">
+              <div class="input-group mail-btn-group" ngbDropdown #myDrop="ngbDropdown">
+                
+                  <input type="text" name="search" [(ngModel)]="code" class="btn-outline-primary form-control" id="dropdownManual" ngbDropdownAnchor
+                      placeholder="Stock Code" />
+                  <div ngbDropdownMenu aria-labelledby="inputSearch">
+                      <button *ngFor="let item of codes.slice(0,5);" type="button" class="dropdown-item" (click)="selectCode(item)">{{item}}</button>
+                      <div *ngIf="!codes.length" style="min-height: 40px;padding-left: 10px;">没有数据</div>
+                  </div>
+                  <span class="input-group-append">
+                      <button type="button" class="btn btn-primary btn-icon input-group-text" (click)="searchCodes($event,myDrop,code)">
+                          <i class="icon nb-search"></i>
+                      </button>
+                  </span>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
 <div class="input-group">
         <input type="text" [(ngModel)]="code" class="form-control" placeholder="Stock Code">
         <span class="input-group-append">
@@ -5,11 +32,14 @@
             Show
           </button>
         </span>
-        <button class="btn btn-danger input-group-text input-group-append" (click)="prev()">
-          <i class="nb-skip-backward prev"></i>
-        </button>
-        <button class="btn btn-danger input-group-text input-group-append" (click)="next()">
-          <i class="nb-skip-forward next" ></i>
-        </button>
 </div>
 <div echarts [options]="options" class="echart" ></div>
+
+<div class="col-sm-5 input-group">
+    <button class="btn btn-danger input-group-text input-group-append" (click)="prev()">
+      <i class="nb-skip-backward prev"></i>
+    </button>
+    <button class="btn btn-danger input-group-text input-group-append" (click)="next()">
+      <i class="nb-skip-forward next" ></i>
+    </button>
+  </div>
