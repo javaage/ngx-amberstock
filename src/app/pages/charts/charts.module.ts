@@ -26,6 +26,7 @@ import { EchartsAreaStackComponent } from './echarts/echarts-area-stack.componen
 import { EchartsBarAnimationComponent } from './echarts/echarts-bar-animation.component';
 import { EchartsRadarComponent } from './echarts/echarts-radar.component';
 import { StockDeltaComponent } from './echarts/stock-delta/stock-delta.component';
+import { StockQueryComponent } from './echarts/stock-query/stock-query.component';
 
 const components = [
   ChartjsBarComponent,
@@ -51,6 +52,6 @@ const components = [
 
 @NgModule({
   imports: [ThemeModule, ChartsRoutingModule, NgxEchartsModule, NgxChartsModule, ChartModule],
-  declarations: [...routedComponents, ...components, StockDeltaComponent],
+  declarations: [...routedComponents, ...components, StockDeltaComponent, StockQueryComponent],
 })
 export class ChartsModule {}

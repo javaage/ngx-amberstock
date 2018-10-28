@@ -10,4 +10,6 @@
 
 export const environment = {
   production: false,
+  phpUrl : 'http://localhost:8000',
+  pythonUrl : 'http://localhost:8001',
 };

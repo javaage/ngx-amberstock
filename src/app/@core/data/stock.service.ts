@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 export class TrafficBar {
   data: number[];
@@ -16,11 +17,11 @@ export class StockService {
   constructor(private http: HttpClient) {}
 
   getStockDelta(code): Observable<any> {
-    return this.http.get(`http://47.94.203.104:8001/stockDelta/${code}`);
+    return this.http.get(`${environment.pythonUrl}/stockDelta/${code}`);
   }
   
   getStockDeltaCode(): Observable<any> {
-    return this.http.get(`http://47.94.203.104:8000/daily/getStockDeltaCode.php`);
+    return this.http.get(`${environment.phpUrl}/daily/getStockDeltaCode.php`);
   }
 }
 
