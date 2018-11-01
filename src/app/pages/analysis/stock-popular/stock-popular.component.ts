@@ -1,13 +1,13 @@
 import { Component, Input, OnInit, AfterViewInit,  OnDestroy} from '@angular/core';
-import { StockService } from '../../../../@core/data/stock.service'
+import { StockService } from '../../../@core/data/stock.service'
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
-  selector: 'ngx-stock-delta',
-  templateUrl: './stock-delta.component.html',
-  styleUrls: ['./stock-delta.component.scss']
+  selector: 'ngx-stock-popular',
+  templateUrl: './stock-popular.component.html',
+  styleUrls: ['./stock-popular.component.scss']
 })
-export class StockDeltaComponent implements AfterViewInit, OnDestroy {
+export class StockPopularComponent implements OnInit {
   _stock: any;
   get stock(): any {
     return this._stock;
@@ -17,7 +17,7 @@ export class StockDeltaComponent implements AfterViewInit, OnDestroy {
   set stock(stock:any) {
     this._stock=stock;
     if(stock.code)
-      this.showDelta();
+      this.showPopular();
   }
 
   options: any = {};
@@ -27,11 +27,10 @@ export class StockDeltaComponent implements AfterViewInit, OnDestroy {
     private stockService: StockService) {
   }
 
-  ngAfterViewInit() {
-
+  ngOnInit() {
   }
 
-  showDelta(){
+  showPopular(){
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
       const colors: any = config.variables;
@@ -147,9 +146,7 @@ export class StockDeltaComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
+    if(this.themeSubscription)
+      this.themeSubscription.unsubscribe();
   }
 }
-
-
-

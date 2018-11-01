@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StockQueryComponent } from './stock-query.component';
+import { IndexDeltaComponent } from './index-delta.component';
 
-describe('StockQueryComponent', () => {
-  let component: StockQueryComponent;
-  let fixture: ComponentFixture<StockQueryComponent>;
+describe('IndexDeltaComponent', () => {
+  let component: IndexDeltaComponent;
+  let fixture: ComponentFixture<IndexDeltaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StockQueryComponent ]
+      declarations: [ IndexDeltaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StockQueryComponent);
+    fixture = TestBed.createComponent(IndexDeltaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

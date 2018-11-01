@@ -19,9 +19,17 @@ export class StockService {
   getStockDelta(code): Observable<any> {
     return this.http.get(`${environment.pythonUrl}/stockDelta/${code}`);
   }
+
+  getIndexDelta(code): Observable<any> {
+    return this.http.get(`${environment.pythonUrl}/indexDelta/${code}`);
+  }
   
   getStockDeltaCode(): Observable<any> {
     return this.http.get(`${environment.phpUrl}/daily/getStockDeltaCode.php`);
+  }
+
+  getIndexDeltaCode(): Observable<any> {
+    return this.http.get(`${environment.phpUrl}/daily/getIndexDeltaCode.php`);
   }
 }
 

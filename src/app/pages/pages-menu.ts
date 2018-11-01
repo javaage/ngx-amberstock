@@ -17,6 +17,28 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
+    title: 'Analysis',
+    icon: 'nb-keypad',
+    link: '/pages/analysis',
+    children: [
+      {
+        title: '股票列表',
+        link: '/pages/analysis/allstock',
+      },
+      {
+        title: '股票查询',
+        link: '/pages/analysis/stockquery',
+      },
+      {
+        title: '指数列表',
+        link: '/pages/analysis/allindex',
+      },
+      {
+        title: '指数查询',
+        link: '/pages/analysis/indexquery',
+      },
+    ],
+  },{
     title: 'UI Features',
     icon: 'nb-keypad',
     link: '/pages/ui-features',

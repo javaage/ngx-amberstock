@@ -10,6 +10,8 @@
 
 export const environment = {
   production: false,
-  phpUrl : 'http://localhost:8000',
-  pythonUrl : 'http://localhost:8001',
+  // phpUrl : 'http://192.168.1.10:8000',
+  // pythonUrl : 'http://192.168.1.10:8001',
+  phpUrl : 'http://47.94.203.104:8000',
+  pythonUrl : 'http://47.94.203.104:8001',
 };

@@ -25,8 +25,9 @@
 </div>
 
 <ngx-stock-delta [stock]="stock"></ngx-stock-delta>
+<!-- <ngx-index-delta [stock]="stock"></ngx-index-delta> -->
 
-<div class="input-group" style="justify-content:center">
+<div class="input-group" style="justify-content:center" *ngIf="allStocks.length>0">
     <button class="btn btn-primary input-group-text input-group-append" (click)="first()">
         <i class="nb-skip-backward "></i>
     </button>

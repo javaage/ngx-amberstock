@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StockQueryComponent } from './stock-query.component';
+import { IndexQueryComponent } from './index-query.component';
 
-describe('StockQueryComponent', () => {
-  let component: StockQueryComponent;
-  let fixture: ComponentFixture<StockQueryComponent>;
+describe('IndexQueryComponent', () => {
+  let component: IndexQueryComponent;
+  let fixture: ComponentFixture<IndexQueryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StockQueryComponent ]
+      declarations: [ IndexQueryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StockQueryComponent);
+    fixture = TestBed.createComponent(IndexQueryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

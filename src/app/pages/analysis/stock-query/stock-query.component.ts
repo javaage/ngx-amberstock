@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit,  OnDestroy} from '@angular/core';
-import { StockService } from '../../../../@core/data/stock.service'
+import { StockService } from '../../../@core/data/stock.service'
 import { NbThemeService } from '@nebular/theme';
+import {ActivatedRoute,Params} from '@angular/router';
 
 @Component({
   selector: 'ngx-stock-query',
@@ -9,7 +10,6 @@ import { NbThemeService } from '@nebular/theme';
 })
 export class StockQueryComponent implements AfterViewInit, OnDestroy {
   options: any = {};
-  themeSubscription: any;
   allStocks = [];
   stocks = [];
   index = 0;
@@ -17,24 +17,53 @@ export class StockQueryComponent implements AfterViewInit, OnDestroy {
   stock: any = {};
 
   constructor(private theme: NbThemeService,
-    private stockService: StockService) {
+    private stockService: StockService,
+    private route: ActivatedRoute) {
+
+      
+  }
+
+  ngAfterViewInit() {
+    this.route.params.subscribe((params:Params) => {
+      var code = params['code'];
+
       this.stockService.getStockDeltaCode().subscribe(result=>{
         this.allStocks = result;
         if(this.allStocks.length>0){
           this.stocks = this.stocks = this.allStocks.filter(v=>{
             return true;
           });
-          if(this.stocks.length>0){
-            this.stock = this.stocks[0];
-            this.code=this.stock.code;
+          if(code){
+            if(this.stocks.length>0){
+              var index = this.stocks.findIndex(item=>{
+                if(item.code == code){
+                  return true;
+                }
+              });
+              if(index>=0){
+                this.index = index;
+                this.stock = this.stocks[this.index];
+                this.code=this.stock.code;
+              }else{
+                this.index = 0;
+                this.code = code;
+              }
+            }else{
+              this.code = code;
+            }
+          }else{
+            if(this.stocks.length>0){
+              this.stock = this.stocks[0];
+              this.code=this.stock.code;
+            }
           }
-            
+          
         }
-        
       });
-  }
 
-  ngAfterViewInit() {
+    });
+
+    
     
   }
 
@@ -95,9 +124,5 @@ export class StockQueryComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.themeSubscription.unsubscribe();
   }
 }
-
-
-
