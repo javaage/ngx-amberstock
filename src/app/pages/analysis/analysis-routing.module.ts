@@ -7,6 +7,7 @@ import { StockPopularComponent } from './stock-popular/stock-popular.component';
 import { AnalysisComponent } from './analysis.component';
 import { AllstockComponent } from './allstock/allstock.component';
 import { AllindexComponent } from './allindex/allindex.component';
+import { PopularQueryComponent } from './popular-query/popular-query.component';
 
 const routes: Routes = [{
   path: '',
@@ -35,7 +36,14 @@ const routes: Routes = [{
   },{
     path: 'stockpopular',
     component: StockPopularComponent,
-  }],
+  },{
+    path: 'popularquery',
+    component: PopularQueryComponent,
+  },{
+    path: '',
+    redirectTo: 'allindex',
+    pathMatch: 'full',
+  },],
 }];
 
 @NgModule({
@@ -51,6 +59,7 @@ export const routedComponents = [
   StockQueryComponent,
   StockDeltaComponent,
   StockPopularComponent,
+  PopularQueryComponent,
   IndexQueryComponent,
   AllindexComponent,
 ];

@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-lg-6">
+        <select class="form-control" (change)="changeCode()" [(ngModel)]="code" name="code" id="code" #codeControl="ngModel">
+            <option *ngFor="let item of stocks" [value]="item.code">{{item.name}}</option>
+        </select>
+    </div>
+    <div class="col-lg-6">
+        <select class="form-control" (change)="changeDay()" [(ngModel)]="day" name="day" id="day" #dayControl="ngModel">
+            <option *ngFor="let item of days" [value]="item">{{item}}</option>
+        </select>
+    </div>
+</div>
+<ngx-stock-popular [stock]="code" [days]="day"></ngx-stock-popular>

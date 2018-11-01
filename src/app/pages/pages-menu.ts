@@ -37,6 +37,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: '指数查询',
         link: '/pages/analysis/indexquery',
       },
+      {
+        title: '大盘趋势',
+        link: '/pages/analysis/popularquery',
+      },
     ],
   },{
     title: 'UI Features',

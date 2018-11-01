@@ -15,10 +15,11 @@ import { StockService } from '../../@core/data/stock.service';
 import { IndexQueryComponent } from './index-query/index-query.component';
 import { IndexDeltaComponent } from './index-delta/index-delta.component';
 import { AllindexComponent } from './allindex/allindex.component';
+import { PopularQueryComponent } from './popular-query/popular-query.component';
 
 @NgModule({
   imports: [CommonModule, ThemeModule, AnalysisRoutingModule, NgxEchartsModule, NgxChartsModule, ChartModule, Ng2SmartTableModule,],
-  declarations: [...routedComponents,  AllstockComponent,AnalysisComponent,StockDeltaComponent,StockQueryComponent,StockPopularComponent, IndexQueryComponent, IndexDeltaComponent, AllindexComponent,],
+  declarations: [...routedComponents,  AllstockComponent,AnalysisComponent,StockDeltaComponent,StockQueryComponent,StockPopularComponent, IndexQueryComponent, IndexDeltaComponent, AllindexComponent, PopularQueryComponent,],
   providers: [
     StockService,
   ],

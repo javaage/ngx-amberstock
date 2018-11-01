@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of as observableOf,  Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
 export class TrafficBar {
@@ -30,6 +30,11 @@ export class StockService {
 
   getIndexDeltaCode(): Observable<any> {
     return this.http.get(`${environment.phpUrl}/daily/getIndexDeltaCode.php`);
+  }
+
+  getPopular(code, n=0, t=0): Observable<any> {
+
+    return this.http.get(`${environment.phpUrl}/other/cy.php?n=${n}&t=${t}&code=${code}`);
   }
 }
 
