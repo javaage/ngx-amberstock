@@ -17,6 +17,7 @@ import { TrafficBarService } from './traffic-bar.service';
 import { ProfitBarAnimationChartService } from './profit-bar-animation-chart.service';
 import { LayoutService } from './layout.service';
 import { StockService } from './stock.service';
+import { ConstService } from './const.service';
 
 const SERVICES = [
   UserService,
@@ -35,6 +36,7 @@ const SERVICES = [
   ProfitBarAnimationChartService,
   LayoutService,
   StockService,
+  ConstService,
 ];
 
 @NgModule({

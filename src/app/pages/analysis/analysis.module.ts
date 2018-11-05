@@ -16,12 +16,20 @@ import { IndexQueryComponent } from './index-query/index-query.component';
 import { IndexDeltaComponent } from './index-delta/index-delta.component';
 import { AllindexComponent } from './allindex/allindex.component';
 import { PopularQueryComponent } from './popular-query/popular-query.component';
+import { IndexCompareComponent } from './index-compare/index-compare.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { DatePipe } from '@angular/common';
+import { StockCompareComponent } from './stock-compare/stock-compare.component';
 
 @NgModule({
-  imports: [CommonModule, ThemeModule, AnalysisRoutingModule, NgxEchartsModule, NgxChartsModule, ChartModule, Ng2SmartTableModule,],
-  declarations: [...routedComponents,  AllstockComponent,AnalysisComponent,StockDeltaComponent,StockQueryComponent,StockPopularComponent, IndexQueryComponent, IndexDeltaComponent, AllindexComponent, PopularQueryComponent,],
+  imports: [CommonModule,
+    ThemeModule, AnalysisRoutingModule, NgxEchartsModule, NgxChartsModule, ChartModule, Ng2SmartTableModule,
+    NgMultiSelectDropDownModule.forRoot(),BsDatepickerModule.forRoot(),],
+  declarations: [...routedComponents, AllstockComponent, AnalysisComponent, StockDeltaComponent, StockQueryComponent, StockPopularComponent, IndexQueryComponent, IndexDeltaComponent, AllindexComponent, PopularQueryComponent, IndexCompareComponent, StockCompareComponent,],
   providers: [
     StockService,
+    DatePipe,
   ],
 })
 export class AnalysisModule { }

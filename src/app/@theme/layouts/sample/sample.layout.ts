@@ -17,7 +17,7 @@ import { StateService } from '../../../@core/data/state.service';
   styleUrls: ['./sample.layout.scss'],
   template: `
     <nb-layout [center]="layout.id === 'center-column'" windowMode>
-    <!--
+      <!--
       <nb-layout-header fixed>
         <ngx-header [position]="sidebar.id === 'start' ? 'normal': 'inverse'"></ngx-header>
       </nb-layout-header>
@@ -27,6 +27,8 @@ import { StateService } from '../../../@core/data/state.service';
                    tag="menu-sidebar"
                    responsive
                    [end]="sidebar.id === 'end'">
+        <ngx-header [position]="sidebar.id === 'start' ? 'normal': 'inverse'"></ngx-header>
+        <br>
         <ng-content select="nb-menu"></ng-content>
       </nb-sidebar>
 
@@ -35,7 +37,7 @@ import { StateService } from '../../../@core/data/state.service';
       </nb-layout-column>
 
 
-
+      <!--
       <nb-sidebar class="settings-sidebar"
                    tag="settings-sidebar"
                    state="collapsed"
@@ -43,6 +45,7 @@ import { StateService } from '../../../@core/data/state.service';
                    [end]="sidebar.id !== 'end'">
         <ngx-theme-settings></ngx-theme-settings>
       </nb-sidebar>
+      -->
     </nb-layout>
   `,
 })

@@ -8,6 +8,8 @@ import { AnalysisComponent } from './analysis.component';
 import { AllstockComponent } from './allstock/allstock.component';
 import { AllindexComponent } from './allindex/allindex.component';
 import { PopularQueryComponent } from './popular-query/popular-query.component';
+import { IndexCompareComponent } from './index-compare/index-compare.component';
+import { StockCompareComponent } from './stock-compare/stock-compare.component';
 
 const routes: Routes = [{
   path: '',
@@ -16,8 +18,17 @@ const routes: Routes = [{
     path: 'allstock',
     component: AllstockComponent,
   },{
+    path: 'allstock/:code',
+    component: AllstockComponent,
+  },{
     path: 'allindex',
     component: AllindexComponent,
+  },{
+    path: 'indexcompare',
+    component: IndexCompareComponent,
+  },{
+    path: 'stockcompare',
+    component: StockCompareComponent,
   },{
     path: 'stockquery/:code',
     component: StockQueryComponent,

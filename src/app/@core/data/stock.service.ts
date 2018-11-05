@@ -23,6 +23,14 @@ export class StockService {
   getIndexDelta(code): Observable<any> {
     return this.http.get(`${environment.pythonUrl}/indexDelta/${code}`);
   }
+
+  indexCompare(indexs,dtStart): Observable<any> {
+    return this.http.get(`${environment.pythonUrl}/indexCompare/${indexs}/${dtStart}`);
+  }
+
+  stockCompare(indexs,dtStart): Observable<any> {
+    return this.http.get(`${environment.pythonUrl}/stockCompare/${indexs}/${dtStart}`);
+  }
   
   getStockDeltaCode(): Observable<any> {
     return this.http.get(`${environment.phpUrl}/daily/getStockDeltaCode.php`);
@@ -33,9 +41,13 @@ export class StockService {
   }
 
   getPopular(code, n=0, t=0): Observable<any> {
-
     return this.http.get(`${environment.phpUrl}/other/cy.php?n=${n}&t=${t}&code=${code}`);
   }
+
+  getIndexWeight(indexCode): Observable<any> {
+    return this.http.get(`${environment.pythonUrl}/indexWeight/${indexCode}`);
+  }
+
 }
 
 

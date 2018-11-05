@@ -1,7 +1,11 @@
 <nb-card>
   <nb-card-header>
-    Smart Table
+      <select class="form-control" (change)="changeCategory()" [(ngModel)]="indexCode" name="category" id="category" #categoryControl="ngModel">
+        <option value="">全部</option>
+        <option *ngFor="let item of categories" [value]="item.code">{{item.name}}</option>
+      </select>
   </nb-card-header>
+  
 
   <nb-card-body>
     <ng2-smart-table [settings]="settings" [source]="source" >
