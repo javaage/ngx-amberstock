@@ -4,6 +4,30 @@ import { Injectable } from '@angular/core';
 export class ConstService {
 
   public categories :any[]= [{
+    "code": "399006.SZ",
+    "name": "创业板指"
+  },{
+    "code": "399001.SZ",
+    "name": "深证成指"
+  }, {
+    "code": "000001.SH",
+    "name": "上证综指"
+  }, {
+    "code": "399005.SZ",
+    "name": "中小板指"
+  }, {
+    "code": "399678.SZ",
+    "name": "深次新股"
+  }, {
+    "code": "399239.SZ",
+    "name": "IT指数"
+  }, {
+    "code": "399951.SZ",
+    "name": "300银行"
+  }, {
+    "code": "399941.SZ",
+    "name": "新能源"
+  }, {
     "code": "399243.SZ",
     "name": "科研指数"
   }, {
@@ -450,30 +474,6 @@ export class ConstService {
   }, {
     "code": "399701.SZ",
     "name": "深证F60"
-  }, {
-    "code": "399001.SZ",
-    "name": "深证成指"
-  }, {
-    "code": "000001.SH",
-    "name": "上证综指"
-  }, {
-    "code": "399006.SZ",
-    "name": "创业板指"
-  }, {
-    "code": "399005.SZ",
-    "name": "中小板指"
-  }, {
-    "code": "399678.SZ",
-    "name": "深次新股"
-  }, {
-    "code": "399239.SZ",
-    "name": "IT指数"
-  }, {
-    "code": "399951.SZ",
-    "name": "300银行"
-  }, {
-    "code": "399941.SZ",
-    "name": "新能源"
   }];
 
   constructor() { }

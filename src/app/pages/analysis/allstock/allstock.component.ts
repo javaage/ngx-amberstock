@@ -51,7 +51,13 @@ export class AllstockComponent {
       },arrow: {
         title: '波形',
         type: 'string',
-      },
+      },ttm: {
+        title: 'ttm',
+        type: 'number',
+      },pb: {
+        title: 'pb',
+        type: 'number',
+      }
     },
   };
 

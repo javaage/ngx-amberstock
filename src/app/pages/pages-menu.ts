@@ -47,7 +47,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
   //     },
   //   ],
   // },
-
+  {
+    title: '指数',
+    group: true,
+  },
   {
     title: '指数列表',
     icon: 'nb-tables',
@@ -57,14 +60,6 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-bar-chart',
     link: '/pages/analysis/indexcompare',
   },{
-    title: '股票列表',
-    icon: 'nb-tables',
-    link: '/pages/analysis/allstock',
-  },{
-    title: '股票对比',
-    icon: 'nb-bar-chart',
-    link: '/pages/analysis/stockcompare',
-  },{
     title: '分时大盘',
     icon: 'nb-notifications',
     link: '/pages/analysis/popularquery',
@@ -72,6 +67,17 @@ export const MENU_ITEMS: NbMenuItem[] = [
     title: '指数查询',
     icon: 'nb-search',
     link: '/pages/analysis/indexquery',
+  },{
+    title: '个股',
+    group: true,
+  },{
+    title: '股票列表',
+    icon: 'nb-tables',
+    link: '/pages/analysis/allstock',
+  },{
+    title: '股票对比',
+    icon: 'nb-bar-chart',
+    link: '/pages/analysis/stockcompare',
   },{
     title: '个股查询',
     icon: 'nb-search',

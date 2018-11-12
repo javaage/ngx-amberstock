@@ -406,6 +406,9 @@ export class StockPopularComponent implements AfterViewInit {
   }
 
   ngOnDestroy(): void {
+    if (this.loop) {
+      clearInterval(this.loop);
+    }
     if (this.themeSubscription)
       this.themeSubscription.unsubscribe();
   }

@@ -48,7 +48,7 @@ export class AllindexComponent {
       },arrow: {
         title: '波形',
         type: 'string',
-      },
+      }
     },
   };
 
